@@ -41,14 +41,7 @@ streamlit.text(fruityvice_response)
 
 streamlit.header("Fruityvice Fruit Advice!")
 
-import requests
-Fruityvice_response = requests.get ("https://fruityvice.com/api/fruit/kiwi")
 
-
-# write your own comment -Normalize the advice
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-# write your own comment - simple language return
-streamlit.dataframe(fruityvice_normalized)
 
 
 
