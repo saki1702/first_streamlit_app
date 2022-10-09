@@ -43,7 +43,6 @@ streamlit.header("Fruityvice Fruit Advice!")
 
 import requests
 Fruityvice_response = requests.get ("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text (Fruityvice_response.json())
 
 
 # write your own comment -Normalize the advice
