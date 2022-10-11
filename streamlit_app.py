@@ -66,6 +66,6 @@ my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list")
 my_data_rows = my_cur.fetchall()
-streamlit.header("What fruit would you like to add?")
-streamlit.dataframe(add_my_fruit)
+streamlit.text("What fruit would you like to add?")
+streamlit.dataframe(add_my_fruit:jackfruit)
 
