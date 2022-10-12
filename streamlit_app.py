@@ -13,22 +13,15 @@ streamlit.text('🥣 Omega 3 & blueberry Oatmeal')
 
 streamlit.text('🥬 Kale, Spinach & Rocket smoothie')
 
-
 streamlit.text('🐔 Hard-Boiled Free-Range Egg')
 
 streamlit.text('🥑 Avacado Toast')
 
 streamlit.header('🍌🍑Build your own fruit smoothie🥝🍇')
 
-
-
-
 my_fruit_list= pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 
 streamlit.dataframe(my_fruit_list)
-
-
-
 
 my_fruit_list = my_fruit_list.set_index('Fruit')
 # Let's put a pick list here so they can pick the fruit they want to include 
@@ -67,17 +60,11 @@ if not fruit_choice:
 #import requests
 #Fruityvice_response = requests.get ("https://fruityvice.com/api/fruit/kiwi")
 
-
 # write your own comment -Normalize the advice
 
 # write your own comment - simple language return
 
-
-
-
 streamlit.stop()
-
-
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
@@ -92,7 +79,6 @@ my_cur.execute("SELECT * from fruit_load_list")
 my_data_rows = my_cur.fetchall()
 fruit_choice = streamlit.text_input (("What fruit would you like to add?"))
 streamlit.write('Thanks for adding', fruit_choice)
-
 
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
