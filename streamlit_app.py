@@ -56,6 +56,11 @@ if not fruit_choice:
   streamlit.error("Please select a fruit to get information")
   else:
     Fruityvice_response = requests.get ("https://fruityvice.com/api/fruit/" = fruit_choice)
+    fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    streamlit.dataframe(fruityvice_normalized)
+    
+ except URLerror as e:
+ streamlit.error()
 
 #streamlit.write('The user entered ', fruit_choice)
 
@@ -64,12 +69,11 @@ if not fruit_choice:
 
 
 # write your own comment -Normalize the advice
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-# write your own comment - simple language return
-streamlit.dataframe(fruityvice_normalized)
 
-except URLerror as e:
-  streamlit.error()
+# write your own comment - simple language return
+
+
+
 
 streamlit.stop()
 
