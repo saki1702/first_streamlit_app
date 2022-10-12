@@ -68,7 +68,7 @@ my_cur.execute("SELECT * from fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.text("What fruit would you like to add?")
 streamlit.text("Jackfruit")
-streamlit.text("Thanks for adding Jackfruit")
+streamlit.write("Thanks for adding Jackfruit")
 
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
