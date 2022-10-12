@@ -44,7 +44,7 @@ streamlit.header("Fruityvice Fruit Advice!")
 #fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 #streamlit.write('The user entered ', fruit_choice)
 try:
-fruit_choice = streamlit.text_input('What fruit would you like information about?')
+fruit_choice = streamlit.text_input("What fruit would you like information about?")
 if not fruit_choice:
   streamlit.error('Please select a fruit to get information')
   else:
@@ -63,7 +63,7 @@ if not fruit_choice:
 # write your own comment -Normalize the advice
 
 # write your own comment - simple language return
-
+#dont run anything here while we troubleshoot
 streamlit.stop()
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
@@ -82,6 +82,6 @@ streamlit.write('Thanks for adding', fruit_choice)
 
 my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
-#dont run anything here while we troubleshoot
+
 
 
