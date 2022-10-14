@@ -71,9 +71,7 @@ if streamlit.button('Get fruit list'):
       my_cur.execute("insert into fruit_load_list values ('" + new_fruit + "')")
       return "Thanks for adding " + new_fruit
       
-      
-
-
+     
 
 #this will not work
 
