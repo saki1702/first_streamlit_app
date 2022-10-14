@@ -1,16 +1,13 @@
 import streamlit
 
 streamlit.title('My parents new healthy diner')
+
 streamlit.header('Breakfast Menu')
 
 streamlit.text('🥣 Omega 3 & blueberry Oatmeal')
-
 streamlit.text('🥬 Kale, Spinach & Rocket smoothie')
-
 streamlit.text('🐔 Hard-Boiled Free-Range Egg')
-
 streamlit.text('🥑 Avacado Toast')
-
 streamlit.header('🍌🍑Build your own fruit smoothie🥝🍇')
 
 import pandas
@@ -21,12 +18,13 @@ my_fruit_list = my_fruit_list.set_index('Fruit')
 fruits_selected = streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index),['Avocado', 'Strawberries'])
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
-
-
-
-
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
 
 #new section to display api response
+streamlit.header("Fruityvice Fruit Advice!")
+
 import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/kiwi")
+streamlit.text(fruityvice_response.json())
+
